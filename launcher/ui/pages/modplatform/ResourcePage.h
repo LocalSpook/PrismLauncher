@@ -97,11 +97,7 @@ class ResourcePage : public QWidget, public BasePage {
     virtual void openUrl(const QUrl&);
 
     /** Whether the version is opted out or not. Currently only makes sense in CF. */
-    virtual bool optedOut(ModPlatform::IndexedVersion& ver) const
-    {
-        Q_UNUSED(ver);
-        return false;
-    };
+    virtual bool optedOut([[maybe_unused]] ModPlatform::IndexedVersion& ver) const { return false; };
 
    public:
     BaseInstance& m_base_instance;
